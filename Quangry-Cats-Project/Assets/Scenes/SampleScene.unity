@@ -224,6 +224,7 @@ MonoBehaviour:
   followSpeed: 20
   xOffset: 0
   yOffset: -1
+  zoomSpeed: 50
 --- !u!1 &838327993
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,7 +415,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2270042775734783927, guid: 0c09133bbe0624946a3f3dbc7d49cc6c, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2270042775734783927, guid: 0c09133bbe0624946a3f3dbc7d49cc6c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -680,7 +681,7 @@ Transform:
   m_Children:
   - {fileID: 992925644}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &1782581051
 CircleCollider2D:

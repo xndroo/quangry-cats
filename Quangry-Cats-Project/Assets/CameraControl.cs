@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class CameraControl : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
     [SerializeField]
     protected Transform trackingTarget;
 
@@ -21,6 +16,20 @@ public class CameraControl : MonoBehaviour
     [SerializeField]
     float yOffset;
 
+    [SerializeField]
+    float zoomSpeed = 5.0f;
+
+
+    private float originalSize = 0f;
+
+    private Camera thisCamera;
+
+    // Use this for initialization
+    void Start()
+    {
+        thisCamera = GetComponent<Camera>();
+        originalSize = thisCamera.orthographicSize;
+    }
 
     protected void Update()
     {
@@ -31,5 +40,12 @@ public class CameraControl : MonoBehaviour
         float yNew = Mathf.Lerp(transform.position.y, yTarget, Time.deltaTime * followSpeed);
 
         transform.position = new Vector3(xNew, yNew, transform.position.z);
+
+        float xsize = trackingTarget.position.x / 5f;
+
+        float ysize = trackingTarget.position.y / 11.25f;
+        float zoomsize = 5f*Mathf.Max(xsize, ysize, 1f);
+
+        thisCamera.orthographicSize = Mathf.Lerp(thisCamera.orthographicSize, zoomsize, Time.deltaTime * zoomSpeed);
     }
 }
