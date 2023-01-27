@@ -41,9 +41,9 @@ public class CameraControl : MonoBehaviour
 
         transform.position = new Vector3(xNew, yNew, transform.position.z);
 
-        float xsize = trackingTarget.position.x / 5f;
+        float xsize = Mathf.Abs(trackingTarget.position.x) / 12f;
 
-        float ysize = trackingTarget.position.y / 11.25f;
+        float ysize = Mathf.Abs(trackingTarget.position.y) / 15f;
         float zoomsize = 5f*Mathf.Max(xsize, ysize, 1f);
 
         thisCamera.orthographicSize = Mathf.Lerp(thisCamera.orthographicSize, zoomsize, Time.deltaTime * zoomSpeed);
