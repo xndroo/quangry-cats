@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 8191300270311045598}
   - component: {fileID: 8191300270311045593}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Quantum Cat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,7 +109,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0ee3bdc9fac2f06448656e73bc9c5dc4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.48807412, g: 0.08218223, b: 0.764151, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -131,7 +131,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 3
+  m_Mass: 10
   m_LinearDrag: 3
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -168,16 +168,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09dbec0b7460d1d419c8636c2fdb76fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 60
+  speed: 250
   launchAngle: 30
-  launchSpeed: 40
-  gravity: -500
-  uncertainty: 0
-  uncertaintyRatio: 0
+  launchSpeed: 200
+  gravity: -1000
+  uncertainty: 1
+  uncertaintyRatio: 0.5
   uncertaintyRatioMin: -1
   uncertaintyRatioMax: 1
   uncertaintyPositionScale: 5
   uncertaintyAngleScale: 30
-  uncertaintyDelay: 1
+  uncertaintyDelay: 0.75
   angleSpeed: 40
   pointer: {fileID: 7448589352538017278, guid: 2fdbcdd2ae1ded04db3e4a7017491b26, type: 3}
