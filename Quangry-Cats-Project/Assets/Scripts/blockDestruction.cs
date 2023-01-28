@@ -7,10 +7,14 @@ public class blockDestruction : MonoBehaviour
     private float collisionVelocity = 0.0f;
     private Rigidbody2D rb;
     public float damageThreshold = 5.0f;
+<<<<<<< HEAD
     private float health;
     public float maxHealth = 10.0f;
     public SpriteRenderer spriteRenderer;
     public Sprite damaged;
+=======
+    // private float health = 3.0f;
+>>>>>>> f7d776f755d049b8261157f6353c0f3db738997d
 
     void Start()
     {
