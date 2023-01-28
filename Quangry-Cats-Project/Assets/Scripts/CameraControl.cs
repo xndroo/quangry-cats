@@ -19,6 +19,9 @@ public class CameraControl : MonoBehaviour
     [SerializeField]
     float zoomSpeed = 5.0f;
 
+    [SerializeField]
+    float minZoom = 5.0f;
+
 
     private float originalSize = 0f;
 
@@ -41,10 +44,10 @@ public class CameraControl : MonoBehaviour
 
         transform.position = new Vector3(xNew, yNew, transform.position.z);
 
-        float xsize = Mathf.Abs(trackingTarget.position.x) / 12f;
+        float xsize = Mathf.Abs(trackingTarget.position.x) * 5f/11.25f;
 
-        float ysize = Mathf.Abs(trackingTarget.position.y) / 15f;
-        float zoomsize = 5f*Mathf.Max(xsize, ysize, 1f);
+        float ysize = Mathf.Abs(trackingTarget.position.y);
+        float zoomsize = Mathf.Max(xsize, ysize, minZoom);
 
         thisCamera.orthographicSize = Mathf.Lerp(thisCamera.orthographicSize, zoomsize, Time.deltaTime * zoomSpeed);
     }

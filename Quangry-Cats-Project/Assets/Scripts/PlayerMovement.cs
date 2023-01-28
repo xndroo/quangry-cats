@@ -5,7 +5,11 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 10.0f;
+    public float launchAngle = 45.0f;
+    public float launchSpeed = 5.0f;
+    public float gravity = -500.0f;
     private Rigidbody2D rb;
+    private bool isProjectile = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,12 +31,22 @@ public class PlayerMovement : MonoBehaviour
         horizontal_translation *= Time.deltaTime;
 
         // Move translation
-        // force = new Vector2(horizontal_translation, vertical_translation);
-        rb.AddForce(new Vector2(horizontal_translation, vertical_translation), ForceMode2D.Impulse);
-
-        if (Input.GetKeyDown("c"))
+        if (!isProjectile)
         {
-            rb.AddForce(new Vector2(80, 20), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(0, vertical_translation), ForceMode2D.Impulse);
+        }
+
+        if (Input.GetKeyDown("space")) // && isProjectile==false
+        {
+            rb.AddForce(new Vector2(launchSpeed*Mathf.Cos(Mathf.Deg2Rad*launchAngle), launchSpeed*Mathf.Sin(Mathf.Deg2Rad*launchAngle))
+                , ForceMode2D.Impulse);
+            isProjectile = true;
+        }
+
+        if (isProjectile)
+        {
+            rb.AddForce(new Vector2(0f, gravity*Time.deltaTime), ForceMode2D.Force);
+            rb.drag = 0.0f;
         }
 
     }
