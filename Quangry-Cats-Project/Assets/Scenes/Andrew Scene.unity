@@ -770,8 +770,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cat1: {fileID: 8191300270311045587, guid: 5877ce76cc51f14438222d5de45ec89f, type: 3}
+  cat2: {fileID: 8191300270311045587, guid: c2041c806327f6543a4a4fc1dba10e5d, type: 3}
   outOfCats: 0
-  cats: 0100000001000000010000000100000001000000
+  cats: 020000000200000001000000
 --- !u!4 &903575342
 Transform:
   m_ObjectHideFlags: 0

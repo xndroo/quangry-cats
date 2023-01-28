@@ -17,7 +17,11 @@ public class PlayerMovement : MonoBehaviour
     public float uncertaintyDelay = 1.0f;
     public float angleSpeed = 1.0f;
     public GameObject pointer;
+    public GameObject uncertaintyCircle;
+    public GameObject uncertaintyTriangle;
     private GameObject myPointer;
+    private GameObject myuncertaintyCircle;
+    private GameObject myuncertaintyTriangle;
     private Rigidbody2D rb;
     private bool isProjectile = false;
     private float pointerDistance = 5.0f;
