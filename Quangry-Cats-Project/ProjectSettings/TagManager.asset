@@ -47,9 +47,9 @@ TagManager:
   - name: Ground
     uniqueID: 401993337
     locked: 0
+  - name: Blocks
+    uniqueID: 861961581
+    locked: 0
   - name: Player
     uniqueID: 1494272427
-    locked: 0
-  - name: Acessory
-    uniqueID: 1415099227
     locked: 0
