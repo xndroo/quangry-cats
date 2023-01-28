@@ -12,6 +12,7 @@ public class ratDestruction : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public Sprite damaged1;
     public Sprite damaged2;
+    private int damageLevel = 0;
 
     void Start()
     {
@@ -38,17 +39,20 @@ public class ratDestruction : MonoBehaviour
 
     void Update()
     {
-        if (health < maxHealth*0.66)
+        if (damageLevel <= 0 && health < maxHealth*0.66)
         {
-            spriteRenderer.sprite = damaged1; 
+            spriteRenderer.sprite = damaged1;
+            damageLevel = 1;
         }
-        if (health < maxHealth*0.33)
+        if (damageLevel <= 1 && health < maxHealth*0.33)
         {
             spriteRenderer.sprite = damaged2;
+            damageLevel = 2;
         }
-        if (health < 0.0f)
+        if (damageLevel <= 2 && health < 0.0f)
         {
             Explode();
+            damageLevel = 3;
         }
     }
 

@@ -1514,10 +1514,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09dbec0b7460d1d419c8636c2fdb76fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 40
   launchAngle: 30
-  launchSpeed: 20
+  launchSpeed: 40
   gravity: -500
+  uncertainty: 1
+  angleSpeed: 40
+  pointer: {fileID: 7448589352538017278, guid: 2fdbcdd2ae1ded04db3e4a7017491b26, type: 3}
 --- !u!1001 &1890038228
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CameraControl : MonoBehaviour
 {
-    [SerializeField]
-    protected Transform trackingTarget;
+
+    public static Transform trackingTarget = null;
 
     [SerializeField]
     protected float followSpeed;
@@ -36,19 +36,22 @@ public class CameraControl : MonoBehaviour
 
     protected void Update()
     {
-        float xTarget = trackingTarget.position.x + xOffset;
-        float yTarget = trackingTarget.position.y + yOffset;
+        if (!(trackingTarget==null))
+        {
+            float xTarget = trackingTarget.position.x + xOffset;
+            float yTarget = trackingTarget.position.y + yOffset;
 
-        float xNew = Mathf.Lerp(transform.position.x, xTarget, Time.deltaTime * followSpeed);
-        float yNew = Mathf.Lerp(transform.position.y, yTarget, Time.deltaTime * followSpeed);
+            float xNew = Mathf.Lerp(transform.position.x, xTarget, Time.deltaTime * followSpeed);
+            float yNew = Mathf.Lerp(transform.position.y, yTarget, Time.deltaTime * followSpeed);
 
-        transform.position = new Vector3(xNew, yNew, transform.position.z);
+            transform.position = new Vector3(xNew, yNew, transform.position.z);
 
-        float xsize = Mathf.Abs(trackingTarget.position.x) * 5f/11.25f;
+            float xsize = Mathf.Abs(trackingTarget.position.x) * 5f/11.25f;
 
-        float ysize = Mathf.Abs(trackingTarget.position.y);
-        float zoomsize = Mathf.Max(xsize, ysize, minZoom);
+            float ysize = Mathf.Abs(trackingTarget.position.y);
+            float zoomsize = Mathf.Max(xsize, ysize, minZoom);
 
-        thisCamera.orthographicSize = Mathf.Lerp(thisCamera.orthographicSize, zoomsize, Time.deltaTime * zoomSpeed);
+            thisCamera.orthographicSize = Mathf.Lerp(thisCamera.orthographicSize, zoomsize, Time.deltaTime * zoomSpeed);
+        }
     }
 }

@@ -11,11 +11,12 @@ public class blockDestruction : MonoBehaviour
     public float maxHealth = 10.0f;
     public SpriteRenderer spriteRenderer;
     public Sprite damaged;
+    private int damageLevelblock = 0;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-	health = maxHealth;
+	    health = maxHealth;
     }
 
     // called when the cube hits the floor
@@ -31,16 +32,22 @@ public class blockDestruction : MonoBehaviour
 
     void Splinter()
     {
-	var exp = GetComponent<ParticleSystem>();
-	exp.Play();
-	Destroy(this.gameObject, exp.duration);
+    	var exp = GetComponent<ParticleSystem>();
+    	exp.Play();
+    	Destroy(this.gameObject, exp.duration);
     }
 
     void Update()
     {
-	if(health < maxHealth*0.5)
-	    spriteRenderer.sprite = damaged;
-	if(health < 0.0f)
-	    Splinter();
+    	if((health < maxHealth*0.5) && (damageLevelblock < 1))
+        {
+    	    spriteRenderer.sprite = damaged;
+            damageLevelblock = 1;
+        }
+    	if((health < 0.0f)  && (damageLevelblock < 2))
+        {
+            Splinter();
+            damageLevelblock = 2;
+        }
     }
 }
