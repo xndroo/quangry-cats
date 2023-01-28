@@ -7,11 +7,15 @@ public class blockDestruction : MonoBehaviour
     private float collisionVelocity = 0.0f;
     private Rigidbody2D rb;
     public float damageThreshold = 5.0f;
-    private float health = 3.0f;
+    private float health;
+    public float maxHealth = 10.0f;
+    public SpriteRenderer spriteRenderer;
+    public Sprite damaged;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+	health = maxHealth;
     }
 
     // called when the cube hits the floor
@@ -21,8 +25,22 @@ public class blockDestruction : MonoBehaviour
         
         if (collisionVelocity > damageThreshold)
         {
-            Debug.Log(collisionVelocity);
+            health = health - collisionVelocity;
         }
     }
 
+    void Splinter()
+    {
+	var exp = GetComponent<ParticleSystem>();
+	exp.Play();
+	Destroy(this.gameObject, exp.duration);
+    }
+
+    void Update()
+    {
+	if(health < maxHealth*0.5)
+	    spriteRenderer.sprite = damaged;
+	if(health < 0.0f)
+	    Splinter();
+    }
 }

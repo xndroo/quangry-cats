@@ -30,6 +30,12 @@ public class ratDestruction : MonoBehaviour
         }
     }
 
+    void Explode() {
+        var exp = GetComponent<ParticleSystem>();
+        exp.Play();
+        Destroy(this.gameObject, exp.duration);
+    }
+
     void Update()
     {
         if (health < maxHealth*0.66)
@@ -42,7 +48,7 @@ public class ratDestruction : MonoBehaviour
         }
         if (health < 0.0f)
         {
-            Destroy(this.gameObject);
+            Explode();
         }
     }
 
