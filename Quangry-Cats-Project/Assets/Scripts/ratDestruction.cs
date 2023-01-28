@@ -6,12 +6,17 @@ public class ratDestruction : MonoBehaviour
 {
     private float collisionVelocity = 0.0f;
     private Rigidbody2D rb;
-    public float damageThreshold = 5.0f;
-    public float health = 3.0f;
+    public float damageThreshold = 3.0f;
+    public float maxHealth = 30.0f;
+    private float health;
+    public SpriteRenderer spriteRenderer;
+    public Sprite damaged1;
+    public Sprite damaged2;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        health = maxHealth;
     }
 
     // called when the cube hits the floor
@@ -21,7 +26,23 @@ public class ratDestruction : MonoBehaviour
         
         if (collisionVelocity > damageThreshold)
         {
-            Debug.Log(collisionVelocity);
+            health = health - collisionVelocity;
+        }
+    }
+
+    void Update()
+    {
+        if (health < maxHealth*0.66)
+        {
+            spriteRenderer.sprite = damaged1; 
+        }
+        if (health < maxHealth*0.33)
+        {
+            spriteRenderer.sprite = damaged2;
+        }
+        if (health < 0.0f)
+        {
+            Destroy(this.gameObject);
         }
     }
 
