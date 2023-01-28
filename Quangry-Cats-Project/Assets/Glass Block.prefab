@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 269219266553215349}
   - component: {fileID: 1155048202220131608}
   m_Layer: 0
-  m_Name: Block
+  m_Name: Glass Block
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,8 +30,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2270042775734783921}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 3.94, y: 2.25, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalPosition: {x: 3.5735, y: 2.932, z: 0}
+  m_LocalScale: {x: 1.251333, y: 2.7305999, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,12 +78,12 @@ SpriteRenderer:
   m_SortingLayerID: 861961581
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 10f36060ce59a5f2b943b6cfe08c54fd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aaa280ced7ad7e453890207fee4d0be6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.78, y: 2.72}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -102,18 +102,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0001013577, y: -0.0050314665}
+  m_Offset: {x: -0.003745705, y: -0.0016915798}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.33, y: 2.33}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 0.78, y: 2.72}
+    newSize: {x: 0.78, y: 2.72}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.27627665, y: 2.25832}
+  m_Size: {x: 0.77917105, y: 2.719236}
   m_EdgeRadius: 0
 --- !u!50 &7293778595802255165
 Rigidbody2D:
@@ -145,13 +145,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2270042775734783921}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69fe24f7df7a99c48bdc7e6db620e7a3, type: 3}
+  m_Script: {fileID: 11500000, guid: c08e569f0579f14c087eb3f653f55052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damageThreshold: 5
-  maxHealth: 10
-  spriteRenderer: {fileID: 2270042775734783926}
-  damaged: {fileID: 21300000, guid: 910fe7ecca1da229eb4e0fa68f3f9567, type: 3}
+  maxHealth: 5
 --- !u!198 &269219266553215349
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -160,7 +158,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2270042775734783921}
   serializedVersion: 8
-  lengthInSec: 1
+  lengthInSec: 0.5
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -288,7 +286,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 10
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -563,7 +561,7 @@ ParticleSystem:
     startRotationX:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 1.7453293
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -856,7 +854,7 @@ ParticleSystem:
     m_UseMeshMaterialIndex: 0
     m_UseMeshColors: 1
     alignToDirection: 0
-    m_Texture: {fileID: 2800000, guid: 79f0aab2e8274d0fa8fab474427a713b, type: 3}
+    m_Texture: {fileID: 2800000, guid: 4e41713289aa4cb839167c3acd01e361, type: 3}
     m_TextureClipChannel: 3
     m_TextureClipThreshold: 0
     m_TextureUVChannel: 0
@@ -3502,7 +3500,7 @@ ParticleSystem:
     range: {x: 0, y: 1}
     separateAxes: 0
   RotationBySpeedModule:
-    enabled: 0
+    enabled: 1
     x:
       serializedVersion: 2
       minMaxState: 0
@@ -3612,7 +3610,7 @@ ParticleSystem:
     curve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.7853982
+      scalar: 3.1415925
       minScalar: 0.7853982
       maxCurve:
         serializedVersion: 2
@@ -3662,7 +3660,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    separateAxes: 0
+    separateAxes: 1
     range: {x: 0, y: 1}
   ColorBySpeedModule:
     enabled: 0
@@ -4880,7 +4878,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: adfb6aa628a3f9b47a7f1dcd975969ee, type: 2}
+  - {fileID: 2100000, guid: 49dc87952cd6817efa82af9ebc202c05, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4905,7 +4903,7 @@ ParticleSystemRenderer:
   m_MeshDistribution: 0
   m_SortMode: 0
   m_MinParticleSize: 0
-  m_MaxParticleSize: 0.003
+  m_MaxParticleSize: 0.004
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
   m_LengthScale: 2
