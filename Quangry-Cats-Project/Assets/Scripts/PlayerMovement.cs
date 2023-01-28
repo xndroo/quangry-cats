@@ -9,12 +9,36 @@ public class PlayerMovement : MonoBehaviour
     public float launchSpeed = 5.0f;
     public float gravity = -500.0f;
     public float uncertainty = 1.0f;
+    public float uncertaintyRatio = 0.5f;
+    public float uncertaintyRatioMin = -1.0f;
+    public float uncertaintyRatioMax = 1.0f;
+    public float uncertaintyPositionScale = 5.0f;
+    public float uncertaintyAngleScale = 30.0f;
+    public float uncertaintyDelay = 1.0f;
     public float angleSpeed = 1.0f;
     public GameObject pointer;
     private GameObject myPointer;
     private Rigidbody2D rb;
     private bool isProjectile = false;
     private float pointerDistance = 5.0f;
+    private float sigmapos;
+    private float sigmaangle;
+    private float deltapos;
+    private float deltaangle;
+    private float delayTimer = 0.0f;
+    private bool beginDelayTimer = false;
+
+    float gaussianDistribution(float stdDev)
+    {
+        System.Random rand = new System.Random(); //reuse this if you are generating many
+        float u1 = 1.0f - (float) rand.NextDouble(); //uniform(0,1] random doubles
+        float u2 = 1.0f - (float) rand.NextDouble();
+        float randStdNormal = Mathf.Sqrt(-2.0f * Mathf.Log(u1)) * Mathf.Sin(2.0f * Mathf.PI * u2); //random normal(0,1)
+        float randNormal =
+                     Mathf.Sqrt(stdDev) * randStdNormal; //random normal(mean,stdDev^2)
+        return (float) randNormal;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +50,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (beginDelayTimer)
+        {
+            delayTimer += Time.deltaTime;
+        }
         // Get the horizontal and vertical axis.
         // By default they are mapped to the arrow keys.
         // The value is in the range -1 to 1
@@ -51,13 +79,31 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown("space")) // && isProjectile==false
+        if (Input.GetKeyDown("space") && beginDelayTimer==false) // Make the position and momentum uncertain
+        {
+            if (uncertainty > 0.0f)
+            {
+                Debug.Log("quantum is happening");
+                sigmapos = Mathf.Pow(10,-uncertaintyRatio);
+                sigmaangle = Mathf.Pow(10,uncertaintyRatio);
+                // TODO Add a delay or animation
+                deltapos = gaussianDistribution(sigmapos) * uncertaintyPositionScale;
+                deltaangle = gaussianDistribution(sigmaangle) * uncertaintyAngleScale;
+                Debug.Log(deltapos);
+                Debug.Log(deltaangle);
+                rb.position = new Vector2(rb.position.x, rb.position.y + deltapos);
+                launchAngle = launchAngle + deltaangle;
+            }
+            beginDelayTimer = true;
+        }
+        if (delayTimer > uncertaintyDelay  && isProjectile==false) //Fire the cat
         {
             rb.AddForce(new Vector2(launchSpeed*Mathf.Cos(Mathf.Deg2Rad*launchAngle), launchSpeed*Mathf.Sin(Mathf.Deg2Rad*launchAngle))
                 , ForceMode2D.Impulse);
             isProjectile = true;
             Destroy(myPointer);
         }
+
         // Change launch angle
         if (Input.GetKey("a"))
         {
@@ -76,4 +122,6 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
+
+
 }

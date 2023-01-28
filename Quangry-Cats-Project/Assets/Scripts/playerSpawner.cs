@@ -5,11 +5,12 @@ using UnityEngine;
 public class playerSpawner : MonoBehaviour
 {
     public GameObject cat1; // Presets for cats
+    public GameObject cat2;
     public bool outOfCats = false;
     private GameObject mycat = null; // current cat
     private int mycattype;
 
-    public List<int> cats = new List<int>() { 1, 1, 1, 1, 1 };
+    public List<int> cats = new List<int>() {2, 2, 1};
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +39,10 @@ public class playerSpawner : MonoBehaviour
             if (mycattype == 1)
             {
                 mycat = Instantiate(cat1);
+            }
+            else if (mycattype == 2)
+            {
+                mycat = Instantiate(cat2);
             }
             CameraControl.trackingTarget = mycat.transform;
             if (cats.Count==0)
