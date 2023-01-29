@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 4948822336490697157}
   - component: {fileID: 4705293405131764930}
   - component: {fileID: 2061167962889588461}
+  - component: {fileID: -8998441443351280681}
   - component: {fileID: 5286687077649801033}
   - component: {fileID: 395419224131620891}
-  - component: {fileID: -5549508746198630967}
   m_Layer: 0
-  m_Name: Armored Rat
+  m_Name: Rat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4948822336490697158}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.27, y: 1, z: 0}
+  m_LocalPosition: {x: 1.416, y: 1.114, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 861961581
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6d933eaa76e29f49fbd66e7b5614f96b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 68650ca0da3864f418adc5db06a44a57, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,9 +102,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.2757969, y: -0.39446688}
+  m_Offset: {x: 0, y: -0.0768826}
   serializedVersion: 2
-  m_Radius: 1.5453196
+  m_Radius: 1.1358025
 --- !u!50 &2061167962889588461
 Rigidbody2D:
   serializedVersion: 4
@@ -126,6 +126,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-8998441443351280681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4948822336490697158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 932676964f4d5224d98e8b89a4a1b53f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageThreshold: 3
+  maxHealth: 30
+  spriteRenderer: {fileID: 4948822336490697157}
+  damaged1: {fileID: 21300000, guid: 0ab34a1db6ade0743aeddca1044d9303, type: 3}
+  damaged2: {fileID: 21300000, guid: ddeabb1cdaa01704494bf0b575c7b349, type: 3}
 --- !u!198 &5286687077649801033
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -701,7 +718,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 3
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -4906,21 +4923,3 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &-5549508746198630967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4948822336490697158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cc754bc2a17f2f73bb4832e5c30cd8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageThreshold: 3
-  maxHealth: 45
-  spriteRenderer: {fileID: 4948822336490697157}
-  damaged1: {fileID: 21300000, guid: 7d09ef40bce72ddaaad35da84626b6a5, type: 3}
-  damaged2: {fileID: 21300000, guid: 0ab34a1db6ade0743aeddca1044d9303, type: 3}
-  damaged3: {fileID: 21300000, guid: ddeabb1cdaa01704494bf0b575c7b349, type: 3}

@@ -11,9 +11,9 @@ public class playerSpawner : MonoBehaviour
     private GameObject mycat = null; // current cat
     private int mycattype;
     private float despawnTimer = 0.0f;
-    // private RigidBody2D catrb;
+    private Rigidbody2D catrb;
 
-    public List<int> cats = new List<int>() {2, 2, 1};
+    public List<int> cats = new List<int>();
     // Start is called before the first frame update
     void Start()
     {
@@ -23,16 +23,12 @@ public class playerSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(false)
+        if(mycat.GetComponent<PlayerMovement>().isProjectile && catrb.velocity.y < 0.5f && mycat.transform.position.y < 1f)
         {
             despawnTimer+= Time.deltaTime;
         }
 
-        if (Input.GetKeyDown("c")) // && isProjectile==false
-        {
-            summonCat();
-        }
-        if ((despawnTimer > despawnTime) || mycat.transform.position.y < -10.0f)
+        if (Input.GetKeyDown("c") || (despawnTimer > despawnTime) || mycat.transform.position.y < -10.0f)
         {
             summonCat();
         }
@@ -40,6 +36,7 @@ public class playerSpawner : MonoBehaviour
 
     void summonCat()
     {
+        despawnTimer = 0.0f;
         if (!outOfCats)
         {
             if (!(mycat == null))
@@ -57,7 +54,7 @@ public class playerSpawner : MonoBehaviour
                 mycat = Instantiate(cat2);
             }
             CameraControl.trackingTarget = mycat.transform;
-            // catrb = mycat.GetComponent<RigidBody2D>();
+            catrb = mycat.GetComponent<Rigidbody2D>();
             if (cats.Count==0)
             {
                 outOfCats = true;

@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     private GameObject myuncertaintyCircle;
     private GameObject myuncertaintyTriangle;
     private Rigidbody2D rb;
-    private bool isProjectile = false;
+    public bool isProjectile = false;
     private float pointerDistance = 5.0f;
     private float sigmapos;
     private float sigmaangle;
