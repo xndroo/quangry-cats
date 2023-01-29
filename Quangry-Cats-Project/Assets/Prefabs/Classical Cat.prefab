@@ -59,7 +59,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8191300270311045587}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5, z: 0}
+  m_LocalPosition: {x: 0, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -178,6 +178,12 @@ MonoBehaviour:
   uncertaintyRatioMax: 1
   uncertaintyPositionScale: 5
   uncertaintyAngleScale: 30
-  uncertaintyDelay: 1
+  uncertaintyDelay: 0
   angleSpeed: 40
+  uncertaintyAngleLength: 4
+  uncertaintyCircleWidth: 2
+  uncertaintyRatioScrollSpeed: 1
   pointer: {fileID: 7448589352538017278, guid: 2fdbcdd2ae1ded04db3e4a7017491b26, type: 3}
+  uncertaintyCircle: {fileID: 0}
+  uncertaintyTriangle: {fileID: 0}
+  isProjectile: 0
