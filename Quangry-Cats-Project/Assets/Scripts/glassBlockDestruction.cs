@@ -32,6 +32,7 @@ public class glassBlockDestruction : MonoBehaviour
     {
     	var exp = GetComponent<ParticleSystem>();
     	exp.Play();
+	PointCounter.instance.GlassPoints();
     	Destroy(this.gameObject, exp.duration);
     }
 

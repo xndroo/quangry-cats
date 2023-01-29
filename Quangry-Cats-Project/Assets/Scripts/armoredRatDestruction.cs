@@ -35,6 +35,7 @@ public class armoredRatDestruction : MonoBehaviour
     void Explode() {
         var exp = GetComponent<ParticleSystem>();
         exp.Play();
+        PointCounter.instance.ArmoredRatPoints();
         Destroy(this.gameObject, exp.duration);
     }
 
