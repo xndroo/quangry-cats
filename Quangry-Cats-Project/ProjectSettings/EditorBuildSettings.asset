@@ -8,4 +8,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: d3450aec7f2cd5344b371dd123a0babf
+  - enabled: 1
+    path: Assets/Scenes/Andrew Scene.unity
+    guid: 92d9dd4a6feda3d1d8c240d5c40765f7
+  - enabled: 1
+    path: Assets/Scenes/Armored Scene.unity
+    guid: 119c98ebc1e48f2c5b2982f13a810428
+  - enabled: 1
+    path: Assets/Scenes/Glass Scene 1.unity
+    guid: d7613ffb9c1fae434a3dbffacbf91d41
+  - enabled: 1
+    path: Assets/Scenes/Metal Scene.unity
+    guid: 1bf6bc60f88d08f0fb682cd62ba0c3bc
   m_configObjects: {}
