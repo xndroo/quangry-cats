@@ -1454,7 +1454,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1695557069}
         m_TargetAssemblyTypeName: ButtonBehaviour, Assembly-CSharp
-        m_MethodName: OnLevel3ButtonPress
+        m_MethodName: OnLevel2ButtonPress
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1588,7 +1588,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1695557069}
         m_TargetAssemblyTypeName: ButtonBehaviour, Assembly-CSharp
-        m_MethodName: OnLevel2ButtonPress
+        m_MethodName: OnLevel3ButtonPress
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

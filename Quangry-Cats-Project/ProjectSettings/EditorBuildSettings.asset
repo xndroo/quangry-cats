@@ -6,21 +6,36 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
     path: Assets/Scenes/Main Menu.unity
     guid: d3450aec7f2cd5344b371dd123a0babf
   - enabled: 1
+    path: Assets/Scenes/Level 1.unity
+    guid: 15f98b35ee8076f28a9c6abb73eeaf8b
+  - enabled: 1
+    path: Assets/Scenes/Level 2.unity
+    guid: a614080d9f4dc75d0800a8b6e3d40d41
+  - enabled: 1
+    path: Assets/Scenes/Level 3.unity
+    guid: cc45899b7ff403327bf75bf0c45784de
+  - enabled: 1
+    path: Assets/Scenes/Level 4.unity
+    guid: f72a5c86c886bd86ca15247dcf59528b
+  - enabled: 1
+    path: Assets/Scenes/Level 5.unity
+    guid: ea2f7d971cdfa2ec48aa6a1433005587
+  - enabled: 0
+    path: Assets/Scenes/SampleScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
     path: Assets/Scenes/Andrew Scene.unity
     guid: 92d9dd4a6feda3d1d8c240d5c40765f7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Armored Scene.unity
     guid: 119c98ebc1e48f2c5b2982f13a810428
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Glass Scene 1.unity
     guid: d7613ffb9c1fae434a3dbffacbf91d41
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Metal Scene.unity
     guid: 1bf6bc60f88d08f0fb682cd62ba0c3bc
   m_configObjects: {}
