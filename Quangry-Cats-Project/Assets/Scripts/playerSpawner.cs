@@ -7,8 +7,10 @@ public class playerSpawner : MonoBehaviour
     public GameObject cat1; // Presets for cats
     public GameObject cat2;
     public bool outOfCats = false;
+    public float despawnTime = 2.0f;
     private GameObject mycat = null; // current cat
     private int mycattype;
+    private float despawnTimer;
 
     public List<int> cats = new List<int>() {2, 2, 1};
     // Start is called before the first frame update
@@ -20,6 +22,10 @@ public class playerSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown("c")) // && isProjectile==false
+        {
+            summonCat();
+        }
         if (Input.GetKeyDown("c")) // && isProjectile==false
         {
             summonCat();
