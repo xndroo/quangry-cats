@@ -34,6 +34,7 @@ public class woodBlockDestruction : MonoBehaviour
     {
     	var exp = GetComponent<ParticleSystem>();
     	exp.Play();
+	PointCounter.instance.WoodPoints();
     	Destroy(this.gameObject, exp.duration);
     }
 
