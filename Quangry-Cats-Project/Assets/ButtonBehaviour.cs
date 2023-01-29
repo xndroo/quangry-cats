@@ -12,11 +12,23 @@ public class ButtonBehaviour : MonoBehaviour {
 
     public void OnLevel1ButtonPress()
     {
-      SceneLoader.Load("Andrew Scene");
+      SceneLoader.Load("Level 1");
     }
 
     public void OnLevel2ButtonPress()
     {
-      SceneLoader.Load("Armored Scene");
+      SceneLoader.Load("Level 2");
+    }
+    public void OnLevel3ButtonPress()
+    {
+      SceneLoader.Load("Level 3");
+    }
+    public void OnLevel4ButtonPress()
+    {
+      SceneLoader.Load("Level 4");
+    }
+    public void OnLevel5ButtonPress()
+    {
+      SceneLoader.Load("Level 5");
     }
 }
