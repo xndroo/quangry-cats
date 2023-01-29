@@ -16,6 +16,9 @@ public class PlayerMovement : MonoBehaviour
     public float uncertaintyAngleScale = 30.0f;
     public float uncertaintyDelay = 1.0f;
     public float angleSpeed = 1.0f;
+    public float uncertaintyAngleLength = 4.0f;
+    public float uncertaintyCircleWidth = 2.0f;
+    public float uncertaintyRatioScrollSpeed = 1.0f;
     public GameObject pointer;
     public GameObject uncertaintyCircle;
     public GameObject uncertaintyTriangle;
@@ -49,6 +52,12 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("I am born");
         rb = GetComponent<Rigidbody2D>();
         myPointer = Instantiate(pointer);
+        if (uncertainty > 0.0f)
+        {
+            myuncertaintyCircle = Instantiate(uncertaintyCircle);
+            myuncertaintyTriangle = Instantiate(uncertaintyTriangle);
+        }
+
     }
 
     // Update is called once per frame
@@ -74,6 +83,16 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(new Vector2(0, vertical_translation), ForceMode2D.Impulse);
         }
 
+        // Update and control uncertainties
+        uncertaintyRatio += Input.mouseScrollDelta.y * uncertaintyRatioScrollSpeed;
+        if (uncertaintyRatio > uncertaintyRatioMax)
+            uncertaintyRatio = uncertaintyRatioMax;
+        if (uncertaintyRatio < uncertaintyRatioMin)
+            uncertaintyRatio = uncertaintyRatioMin;
+        sigmapos = Mathf.Pow(10,-uncertaintyRatio);
+        sigmaangle = Mathf.Pow(10,uncertaintyRatio);
+
+
         // Update pointer
         if (!isProjectile)
         {
@@ -81,15 +100,25 @@ public class PlayerMovement : MonoBehaviour
             myPointer.transform.position = this.transform.position+new Vector3(pointerDistance*Mathf.Cos(Mathf.Deg2Rad*launchAngle)+0.02f,
                 pointerDistance*Mathf.Sin(Mathf.Deg2Rad*launchAngle)+0.44f, 0f);
         }
+        //Update quantum indicators
+        if (delayTimer==0f && (uncertainty > 0.0f))
+        {
+            myuncertaintyCircle.transform.position = this.transform.position;
+            myuncertaintyTriangle.transform.rotation = Quaternion.Euler(0.0f, 0.0f, launchAngle+90f);
+            myuncertaintyTriangle.transform.position = this.transform.position+new Vector3(0.5f*uncertaintyAngleLength*
+                Mathf.Cos(Mathf.Deg2Rad*
+                launchAngle)+0.02f,0.5f*uncertaintyAngleLength*Mathf.Sin(Mathf.Deg2Rad*launchAngle)+0.44f, 0f);
+
+            myuncertaintyCircle.transform.localScale = new Vector2(uncertaintyCircleWidth,sigmapos*uncertaintyPositionScale);
+            myuncertaintyTriangle.transform.localScale = new Vector2(sigmaangle*uncertaintyAngleScale,uncertaintyAngleLength);
+        }
 
 
         if (Input.GetKeyDown("space") && beginDelayTimer==false) // Make the position and momentum uncertain
         {
             if (uncertainty > 0.0f)
             {
-                Debug.Log("quantum is happening");
-                sigmapos = Mathf.Pow(10,-uncertaintyRatio);
-                sigmaangle = Mathf.Pow(10,uncertaintyRatio);
+
                 // TODO Add a delay or animation
                 deltapos = gaussianDistribution(sigmapos) * uncertaintyPositionScale;
                 deltaangle = gaussianDistribution(sigmaangle) * uncertaintyAngleScale;
@@ -99,6 +128,8 @@ public class PlayerMovement : MonoBehaviour
                 launchAngle = launchAngle + deltaangle;
             }
             beginDelayTimer = true;
+            Destroy(myuncertaintyCircle);
+            Destroy(myuncertaintyTriangle);
         }
         if (delayTimer > uncertaintyDelay  && isProjectile==false) //Fire the cat
         {

@@ -172,12 +172,17 @@ MonoBehaviour:
   launchAngle: 30
   launchSpeed: 200
   gravity: -1000
-  uncertainty: 1
-  uncertaintyRatio: 0.5
+  uncertainty: 1.2
+  uncertaintyRatio: 0.34
   uncertaintyRatioMin: -1
   uncertaintyRatioMax: 1
   uncertaintyPositionScale: 5
-  uncertaintyAngleScale: 30
+  uncertaintyAngleScale: 27.1
   uncertaintyDelay: 0.75
   angleSpeed: 40
+  uncertaintyAngleLength: 4
+  uncertaintyCircleWidth: 2
+  uncertaintyRatioScrollSpeed: 0.1
   pointer: {fileID: 7448589352538017278, guid: 2fdbcdd2ae1ded04db3e4a7017491b26, type: 3}
+  uncertaintyCircle: {fileID: 6532139484888988987, guid: 497caed9b405ed34c8281cea573982ce, type: 3}
+  uncertaintyTriangle: {fileID: 4233364798422080985, guid: 029810b3c99319543a74cc241dd57756, type: 3}
