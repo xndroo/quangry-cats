@@ -10,7 +10,8 @@ public class playerSpawner : MonoBehaviour
     public float despawnTime = 2.0f;
     private GameObject mycat = null; // current cat
     private int mycattype;
-    private float despawnTimer;
+    private float despawnTimer = 0.0f;
+    // private RigidBody2D catrb;
 
     public List<int> cats = new List<int>() {2, 2, 1};
     // Start is called before the first frame update
@@ -22,11 +23,16 @@ public class playerSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(false)
+        {
+            despawnTimer+= Time.deltaTime;
+        }
+
         if (Input.GetKeyDown("c")) // && isProjectile==false
         {
             summonCat();
         }
-        if (Input.GetKeyDown("c")) // && isProjectile==false
+        if ((despawnTimer > despawnTime) || mycat.transform.position.y < -10.0f)
         {
             summonCat();
         }
@@ -51,6 +57,7 @@ public class playerSpawner : MonoBehaviour
                 mycat = Instantiate(cat2);
             }
             CameraControl.trackingTarget = mycat.transform;
+            // catrb = mycat.GetComponent<RigidBody2D>();
             if (cats.Count==0)
             {
                 outOfCats = true;
