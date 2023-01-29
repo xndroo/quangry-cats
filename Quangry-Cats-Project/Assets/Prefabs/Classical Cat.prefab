@@ -171,7 +171,7 @@ MonoBehaviour:
   speed: 60
   launchAngle: 30
   launchSpeed: 40
-  gravity: -500
+  gravity: -700
   uncertainty: 0
   uncertaintyRatio: 0
   uncertaintyRatioMin: -1

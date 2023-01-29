@@ -7,7 +7,10 @@ public class ButtonBehaviour : MonoBehaviour {
 
     public void OnMenuButtonPress()
     {
-      SceneLoader.Load("Main Menu");
+        SceneLoader.Load("Main Menu");
+    }
+    public void doExitGame() {
+        Application.Quit();
     }
 
     public void OnLevel1ButtonPress()
