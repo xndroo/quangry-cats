@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class playerSpawner : MonoBehaviour
 {
@@ -13,12 +14,29 @@ public class playerSpawner : MonoBehaviour
     private float despawnTimer = 0.0f;
     private Rigidbody2D catrb;
 
+    public List<Sprite> Sprites = new List<Sprite>(); //List of Sprites added from the Editor to be created as GameObjects at runtime
+    public GameObject ParentPanel; //Parent Panel you want the new Images to be children of
+
+
     public List<int> cats = new List<int>();
     // Start is called before the first frame update
     void Start()
     {
-        summonCat();
+        for (int i = 0; i < cats.Count; i++)
+        {
+            Sprite currentSprite = Sprites[cats[i]-1];
+            GameObject NewObj = new GameObject("catsprite"+i.ToString()); //Create the GameObject
+            Image NewImage = NewObj.AddComponent<Image>(); //Add the Image Component script
+            NewImage.sprite = currentSprite; //Set the Sprite of the Image Component on the new GameObject
+            NewObj.GetComponent<RectTransform>().SetParent(ParentPanel.transform); //Assign the newly created Image GameObject 
+            NewObj.SetActive(true); //Activate the GameObject
+            NewObj.GetComponent<RectTransform>().anchorMin = new Vector2(1f, 1f);
+            NewObj.GetComponent<RectTransform>().anchorMax = new Vector2(1f, 1f);
+            NewObj.GetComponent<RectTransform>().localScale = new Vector3( 0.5f*(1f-(0.5f*(cats[i]-1f))), 0.5f*(1f-(0.5f*(cats[i]-1f))), 1f);
+            NewObj.GetComponent<RectTransform>().anchoredPosition = new Vector3( -60f - 30f*i, -60f, 0f );
+        }
 
+        summonCat();
     }
 
     // Update is called once per frame
@@ -48,6 +66,7 @@ public class playerSpawner : MonoBehaviour
             if (!(mycat == null))
             {
                 Destroy(mycat);
+                Destroy(GameObject.Find("catsprite"+(cats.Count).ToString()));
             }
             mycattype = cats[0];
             cats.RemoveAt(0);
