@@ -7,7 +7,7 @@ public class playerSpawner : MonoBehaviour
     public GameObject cat1; // Presets for cats
     public GameObject cat2;
     public bool outOfCats = false;
-    public float despawnTime = 2.0f;
+    public float despawnTime = 1.0f;
     private GameObject mycat = null; // current cat
     private int mycattype;
     private float despawnTimer = 0.0f;
@@ -18,17 +18,23 @@ public class playerSpawner : MonoBehaviour
     void Start()
     {
         summonCat();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(mycat.GetComponent<PlayerMovement>().isProjectile && catrb.velocity.y < 0.5f && mycat.transform.position.y < 1.5f)
+        if(mycat.GetComponent<PlayerMovement>().isProjectile && catrb.velocity.y < 0.5f && catrb.velocity.x < 0.5f)
         {
             despawnTimer+= Time.deltaTime;
         }
+        else 
+        {
+            despawnTimer = 0f;
+        }
 
-        if (Input.GetKeyDown("c") || (despawnTimer > despawnTime) || mycat.transform.position.y < -10.0f)
+        if (Input.GetKeyDown("c") && mycat.GetComponent<PlayerMovement>().isProjectile 
+            || (despawnTimer > despawnTime) || mycat.transform.position.y < -10.0f)
         {
             summonCat();
         }

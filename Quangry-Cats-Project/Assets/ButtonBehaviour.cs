@@ -34,4 +34,8 @@ public class ButtonBehaviour : MonoBehaviour {
     {
       SceneLoader.Load("Level 5");
     }
+    public void OnLevel6ButtonPress()
+    {
+      SceneLoader.Load("Level 6");
+    }
 }

@@ -764,7 +764,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 18
+    type: 0
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -772,7 +772,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 0.2, y: 2, z: 1}
+    m_Scale: {x: 0.3, y: 1.5, z: 1}
     placementMode: 2
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -839,7 +839,7 @@ ParticleSystem:
     m_SpriteRenderer: {fileID: 0}
     m_UseMeshMaterialIndex: 0
     m_UseMeshColors: 1
-    alignToDirection: 0
+    alignToDirection: 1
     m_Texture: {fileID: 2800000, guid: f88677df267a41d6be1e7a6133e7d227, type: 3}
     m_TextureClipChannel: 3
     m_TextureClipThreshold: 0
@@ -4927,7 +4927,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34e38f10db04f8b1abe183dffe550b72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageThreshold: 5
+  damageThreshold: 4
   maxHealth: 20
   spriteRenderer: {fileID: 2270042775734783926}
   damaged1: {fileID: 21300000, guid: 7cd6784a23f2ae394ad39bda3289ab85, type: 3}
