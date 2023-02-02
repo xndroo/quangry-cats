@@ -2,13 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ButtonBehaviour : MonoBehaviour {
 
-    public void OnMenuButtonPress()
-    {
-        SceneLoader.Load("Main Menu");
-    }
     public void doExitGame() {
         Application.Quit();
     }
