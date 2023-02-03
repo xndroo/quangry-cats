@@ -34,9 +34,9 @@ public class metalBlockDestruction : MonoBehaviour
     void Break()
     {
     	var exp = GetComponent<ParticleSystem>();
-    	exp.Play();
-	PointCounter.instance.MetalPoints();
-    	Destroy(this.gameObject, exp.duration);
+      exp.Play();
+      PointCounter.instance.AddPoints(15);
+    	Destroy(this.gameObject, exp.main.duration);
     }
 
     void Update()

@@ -33,9 +33,9 @@ public class woodBlockDestruction : MonoBehaviour
     void Splinter()
     {
     	var exp = GetComponent<ParticleSystem>();
-    	exp.Play();
-	PointCounter.instance.WoodPoints();
-    	Destroy(this.gameObject, exp.duration);
+      exp.Play();
+      PointCounter.instance.AddPoints(10);
+    	Destroy(this.gameObject, exp.main.duration);
     }
 
     void Update()

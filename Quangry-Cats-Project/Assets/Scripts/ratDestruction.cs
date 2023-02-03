@@ -34,8 +34,8 @@ public class ratDestruction : MonoBehaviour
     void Explode() {
         var exp = GetComponent<ParticleSystem>();
         exp.Play();
-        PointCounter.instance.RatPoints();
-        Destroy(this.gameObject, exp.duration);
+        PointCounter.instance.AddPoints(1000);
+        Destroy(this.gameObject, exp.main.duration);
     }
 
     void Update()

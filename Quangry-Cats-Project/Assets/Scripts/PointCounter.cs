@@ -15,33 +15,11 @@ public class PointCounter : MonoBehaviour
     }
     void Start()
     {
-	Debug.Log("Score: " + points.ToString());
-	scoreText.text = "Score: " + points.ToString();
+      scoreText.text = "Score: " + points.ToString();
     }
-    public void RatPoints()
+    public void AddPoints(int p)
     {
-        points += 1000;
-	scoreText.text = "Score: " + points.ToString();
-    }
-    public void ArmoredRatPoints()
-    {
-        points += 2000;
-	scoreText.text = "Score: " + points.ToString();
-    }
-    public void MetalPoints()
-    {
-        points += 30;
-	scoreText.text = "Score: " + points.ToString();
-	Debug.Log("Score: " + points.ToString());
-    }
-    public void GlassPoints()
-    {
-        points += 10;
-	scoreText.text = "Score: " + points.ToString();
-    }
-    public void WoodPoints()
-    {
-        points += 20;
-	scoreText.text = "Score: " + points.ToString();
+        points += p;
+        scoreText.text = "Score: " + points.ToString();
     }
 }
