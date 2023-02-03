@@ -15,7 +15,7 @@ public class woodBlockDestruction : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+      rb = GetComponent<Rigidbody2D>();
 	    health = maxHealth;
     }
 
