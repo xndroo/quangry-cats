@@ -9,12 +9,17 @@ public class levelManager : MonoBehaviour
     public GameObject menuButton;
     public GameObject resetButton; 
     public GameObject canvas;
-    
+    public bool levelOngoing = true;
+    private GameObject playerManager;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
+        playerManager = GameObject.Find("PlayerManager");
+        Debug.Log(playerManager);
+
         GameObject myMenuButton = Instantiate(menuButton);
         GameObject myResetButton = Instantiate(resetButton);
         myMenuButton.transform.SetParent(canvas.transform,false);
@@ -26,7 +31,19 @@ public class levelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (levelOngoing)
+        {
+            if (playerManager.GetComponent<playerSpawner>().outOfCats)
+            {
+                levelOngoing = false;
+                levelFail();
+            }
+            else if(GameObject.FindWithTag("Enemy Rat")==null)
+            {
+                levelOngoing = false;
+                levelWin();
+            }
+        }
     }
 
     void levelWin()
@@ -36,7 +53,7 @@ public class levelManager : MonoBehaviour
 
     void levelFail()
     {
-
+        Debug.Log("Level Lose");
     }
 
     public void OnResetButtonPress()

@@ -52,16 +52,17 @@ public class playerSpawner : MonoBehaviour
         }
 
         if (Input.GetKeyDown("c") && mycat.GetComponent<PlayerMovement>().isProjectile 
-            || (despawnTimer > despawnTime) || mycat.transform.position.y < -10.0f)
+            || (despawnTimer > despawnTime) || mycat.transform.position.y < -25.0f)
         {
             summonCat();
         }
+
     }
 
     void summonCat()
     {
         despawnTimer = 0.0f;
-        if (!outOfCats)
+        if (cats.Count > 0)
         {
             if (!(mycat == null))
             {
@@ -80,10 +81,10 @@ public class playerSpawner : MonoBehaviour
             }
             CameraControl.trackingTarget = mycat.transform;
             catrb = mycat.GetComponent<Rigidbody2D>();
-            if (cats.Count==0)
-            {
-                outOfCats = true;
-            }
+        }
+        else 
+        {
+            outOfCats = true;
         }
     }
 }
