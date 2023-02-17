@@ -531,6 +531,10 @@ PrefabInstance:
       propertyPath: canvas
       value: 
       objectReference: {fileID: 476729497}
+    - target: {fileID: 8659200582511599476, guid: 3458548d7ccd42543923421e103a2935, type: 3}
+      propertyPath: PopupBG
+      value: 
+      objectReference: {fileID: 5670147100953372107, guid: bbf8766613ee2db4c8dac88af36f60cb, type: 3}
     - target: {fileID: 8937448533905311654, guid: 3458548d7ccd42543923421e103a2935, type: 3}
       propertyPath: m_RootOrder
       value: 0

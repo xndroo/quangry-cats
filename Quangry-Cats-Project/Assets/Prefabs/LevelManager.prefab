@@ -44,6 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8bf7b560fad09344ab1fc87b25d9eb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
   menuButton: {fileID: 6828074172402830761, guid: 0047cebbe6c15384581b069ff1fb088b, type: 3}
   resetButton: {fileID: 3236845495122680536, guid: ee3235b93958bc24ebe8c54187d2313a, type: 3}
-  canvas: {fileID: 0}
+  PopupBG: {fileID: 5670147100953372107, guid: bbf8766613ee2db4c8dac88af36f60cb, type: 3}
+  popupResetButton: {fileID: 6410937400352307053, guid: bc37dee8d1cd2144e9a5ae11b987b0c7, type: 3}
+  popupMenuButton: {fileID: 6828074172402830761, guid: 0047cebbe6c15384581b069ff1fb088b, type: 3}
+  popupNextButton: {fileID: 0}
+  popupWin: {fileID: 280661228059977572, guid: 578dbbde7853fe5dfbe9c802ed8d03f2, type: 3}
+  popupLose: {fileID: 4577724101824760859, guid: 6ea05b4ed5b2ad544b1e9c2f129b3604, type: 3}
+  levelOngoing: 1
