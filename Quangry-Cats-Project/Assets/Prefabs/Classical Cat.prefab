@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 8191300270311045593}
   m_Layer: 0
   m_Name: Classical Cat
-  m_TagString: Cat
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -170,8 +170,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 50
   launchAngle: 30
-  launchSpeed: 200
-  gravity: -700
+  launchSpeed: 60
+  gravity: -1500
   uncertainty: 0
   uncertaintyRatio: 0
   uncertaintyRatioMin: -1
