@@ -57,6 +57,11 @@ public class playerSpawner : MonoBehaviour
             summonCat();
         }
 
+        if (!mycat.GetComponent<PlayerMovement>().isProjectile && Input.GetKeyDown("4"))
+        {
+            mycat.GetComponent<PlayerMovement>().launchSpeed = 200;
+        }
+
     }
 
     void summonCat()
