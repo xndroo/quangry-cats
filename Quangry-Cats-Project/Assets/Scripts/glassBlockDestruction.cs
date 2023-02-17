@@ -31,8 +31,8 @@ public class glassBlockDestruction : MonoBehaviour
     void Shard()
     {
     	var exp = GetComponent<ParticleSystem>();
-      exp.Play();
-      PointCounter.instance.AddPoints(5);
+    	exp.Play();
+	    PointCounter.instance.AddPoints(5);
     	Destroy(this.gameObject, exp.main.duration);
     }
 

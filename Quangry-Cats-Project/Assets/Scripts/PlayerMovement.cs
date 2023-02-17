@@ -49,7 +49,6 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("I am born");
         rb = GetComponent<Rigidbody2D>();
         myPointer = Instantiate(pointer);
         if (uncertainty > 0.0f)
@@ -119,11 +118,8 @@ public class PlayerMovement : MonoBehaviour
             if (uncertainty > 0.0f)
             {
 
-                // TODO Add a delay or animation
                 deltapos = gaussianDistribution(sigmapos) * uncertaintyPositionScale;
                 deltaangle = gaussianDistribution(sigmaangle) * uncertaintyAngleScale;
-                Debug.Log(deltapos);
-                Debug.Log(deltaangle);
                 rb.position = new Vector2(rb.position.x, rb.position.y + deltapos);
                 launchAngle = launchAngle + deltaangle;
             }

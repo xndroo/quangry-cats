@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy Rat
   layers:
   - Default
   - TransparentFX
@@ -52,4 +53,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1494272427
+    locked: 0
+  - name: UI
+    uniqueID: 3265337773
     locked: 0

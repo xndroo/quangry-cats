@@ -6,9 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class levelManager : MonoBehaviour
 {
+    public GameObject canvas;
     public GameObject menuButton;
     public GameObject resetButton; 
-    public GameObject canvas;
+    public GameObject PopupBG;
+    public GameObject popupResetButton;
+    public GameObject popupMenuButton;
+    public GameObject popupNextButton;
+    public GameObject popupWin;
+    public GameObject popupLose;
+    
     public bool levelOngoing = true;
     private GameObject playerManager;
 
@@ -18,7 +25,6 @@ public class levelManager : MonoBehaviour
     void Start()
     {
         playerManager = GameObject.Find("PlayerManager");
-        Debug.Log(playerManager);
 
         GameObject myMenuButton = Instantiate(menuButton);
         GameObject myResetButton = Instantiate(resetButton);
@@ -26,6 +32,7 @@ public class levelManager : MonoBehaviour
         myResetButton.transform.SetParent(canvas.transform,false);
         myMenuButton.GetComponent<Button>().onClick.AddListener(OnMenuButtonPress);
         myResetButton.GetComponent<Button>().onClick.AddListener(OnResetButtonPress);
+
     }
 
     // Update is called once per frame
@@ -44,16 +51,35 @@ public class levelManager : MonoBehaviour
                 levelWin();
             }
         }
+        //Bugtesting mode
+        if (Input.GetKeyDown("k"))
+            levelWin();
+        if (Input.GetKeyDown("l"))
+            levelFail();
     }
 
     void levelWin()
     {
         Debug.Log("Level Win");
+        GameObject myPopupBG = Instantiate(PopupBG);
+        GameObject myPopupResetButton = Instantiate(popupResetButton);
+        GameObject mypopupWin = Instantiate(popupWin);
+        myPopupBG.transform.SetParent(canvas.transform,false);
+        myPopupResetButton.transform.SetParent(canvas.transform,false);
+        mypopupWin.transform.SetParent(canvas.transform,false);
+
+        myPopupResetButton.GetComponent<Button>().onClick.AddListener(OnResetButtonPress);
     }
 
     void levelFail()
     {
         Debug.Log("Level Lose");
+        GameObject myPopupBG = Instantiate(PopupBG);
+        GameObject myPopupResetButton = Instantiate(popupResetButton);
+        GameObject mypopupLose = Instantiate(popupLose);
+        myPopupBG.transform.SetParent(canvas.transform,false);
+        myPopupResetButton.transform.SetParent(canvas.transform,false);
+        mypopupLose.transform.SetParent(canvas.transform,false);
     }
 
     public void OnResetButtonPress()

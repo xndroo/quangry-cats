@@ -42,7 +42,7 @@ public class playerSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(mycat.GetComponent<PlayerMovement>().isProjectile && catrb.velocity.y < 0.5f && catrb.velocity.x < 0.5f)
+        if(mycat.GetComponent<PlayerMovement>().isProjectile && catrb.velocity.y < 0.5f && catrb.velocity.x < 1.0f)
         {
             despawnTimer+= Time.deltaTime;
         }

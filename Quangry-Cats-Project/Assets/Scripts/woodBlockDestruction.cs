@@ -7,7 +7,9 @@ public class woodBlockDestruction : MonoBehaviour
     private float collisionVelocity = 0.0f;
     private Rigidbody2D rb;
     public float damageThreshold = 5.0f;
+    [SerializeField]
     private float health;
+
     public float maxHealth = 10.0f;
     public SpriteRenderer spriteRenderer;
     public Sprite damaged;
