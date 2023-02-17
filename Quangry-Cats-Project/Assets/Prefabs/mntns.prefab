@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 5328900665790003690}
   - component: {fileID: 5328900665790003691}
   - component: {fileID: 5328900665790003688}
+  - component: {fileID: 8678440402955709317}
   m_Layer: 0
   m_Name: mntns
-  m_TagString: Untagged
+  m_TagString: Mountains
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -513,3 +514,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &8678440402955709317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5328900665790003692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bad039b338231a4d8d8326d28eb541e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

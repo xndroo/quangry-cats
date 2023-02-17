@@ -154,5 +154,14 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        
+        if (col.gameObject.tag == "Mountains")
+        {
+            rb.velocity = new Vector2(2.0f * (rb.velocity.x - 3.0f), rb.velocity.y);
+        }
+
+    }
 
 }
