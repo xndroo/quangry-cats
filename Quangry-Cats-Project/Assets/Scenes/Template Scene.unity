@@ -1630,7 +1630,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: mntns
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8678440402955709317, guid: 2fe342956d0304b44ba147f374508c78, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2fe342956d0304b44ba147f374508c78, type: 3}
 --- !u!1 &767898840
 GameObject:
