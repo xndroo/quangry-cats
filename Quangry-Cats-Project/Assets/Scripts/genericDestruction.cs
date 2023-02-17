@@ -37,7 +37,8 @@ public class genericDestruction : MonoBehaviour
     {
         if (health < 0.0f)
         {
-            Instantiate(deathEffects, transform.position, transform.rotation);
+            GameObject mydeathEffect = Instantiate(deathEffects, transform.position, transform.rotation);
+            mydeathEffect.GetComponent<Rigidbody2D>().velocity = rb.velocity;
             PointCounter.instance.AddPoints(deathPoints);
             Destroy(this.gameObject);
         }
