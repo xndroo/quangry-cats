@@ -2209,7 +2209,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0ee3bdc9fac2f06448656e73bc9c5dc4, type: 3}
   - {fileID: 21300000, guid: d682754183d4a61cc980e927b7388ede, type: 3}
   ParentPanel: {fileID: 476729497}
-  cats: 0200000002000000020000000200000002000000
+  cats: 02000000020000000200000002000000
 --- !u!4 &903575342
 Transform:
   m_ObjectHideFlags: 0
@@ -2818,6 +2818,10 @@ PrefabInstance:
       propertyPath: canvas
       value: 
       objectReference: {fileID: 476729497}
+    - target: {fileID: 8659200582511599476, guid: 3458548d7ccd42543923421e103a2935, type: 3}
+      propertyPath: popupNextButton
+      value: 
+      objectReference: {fileID: 8622508515250480689, guid: 38d391cfcc6431e449ad2971f349d32d, type: 3}
     - target: {fileID: 8937448533905311654, guid: 3458548d7ccd42543923421e103a2935, type: 3}
       propertyPath: m_RootOrder
       value: 0

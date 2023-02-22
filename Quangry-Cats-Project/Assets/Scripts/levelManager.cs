@@ -51,6 +51,20 @@ public class levelManager : MonoBehaviour
                 levelWin();
             }
         }
+        if (Input.GetKeyDown("r"))
+        {
+            OnResetButtonPress();
+        }
+        if (Input.GetKeyDown("n"))
+        {
+            OnNextButtonPress();
+        }
+        if (Input.GetKeyDown("m"))
+        {
+            OnMenuButtonPress();
+        }
+
+
         //Bugtesting mode
         if (Input.GetKeyDown("k"))
             levelWin();
@@ -63,12 +77,15 @@ public class levelManager : MonoBehaviour
         Debug.Log("Level Win");
         GameObject myPopupBG = Instantiate(PopupBG);
         GameObject myPopupResetButton = Instantiate(popupResetButton);
+        GameObject myPopupNextButton = Instantiate(popupNextButton);
         GameObject mypopupWin = Instantiate(popupWin);
         myPopupBG.transform.SetParent(canvas.transform,false);
         myPopupResetButton.transform.SetParent(canvas.transform,false);
+        myPopupNextButton.transform.SetParent(canvas.transform,false);
         mypopupWin.transform.SetParent(canvas.transform,false);
 
         myPopupResetButton.GetComponent<Button>().onClick.AddListener(OnResetButtonPress);
+        myPopupNextButton.GetComponent<Button>().onClick.AddListener(OnNextButtonPress);
     }
 
     void levelFail()
@@ -91,6 +108,14 @@ public class levelManager : MonoBehaviour
     public void OnMenuButtonPress()
     {
         SceneLoader.Load("Main Menu");
+    }
+
+    public void OnNextButtonPress()
+    {
+        string currentSceneName = SceneManager.GetActiveScene().name; 
+        int levelNumber = int.Parse(currentSceneName.Substring(6));
+        Debug.Log(levelNumber);
+        // SceneLoader.Load("Level " + levelNumber.toString());
     }
 
 }

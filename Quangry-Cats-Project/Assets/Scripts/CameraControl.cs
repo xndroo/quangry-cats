@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class CameraControl : MonoBehaviour
 {
+    public float panInTime = 3f;
+    public float panInZoom = 4f;
+    public float panInYoffset = 15f;
+    private float myPanInTime;
+    private float myYstart;
 
     public static Transform trackingTarget = null;
 
@@ -32,11 +37,19 @@ public class CameraControl : MonoBehaviour
     {
         thisCamera = GetComponent<Camera>();
         originalSize = thisCamera.orthographicSize;
+        myPanInTime = panInTime;
+        myYstart = transform.position.y;
     }
 
     protected void Update()
     {
-        if (!(trackingTarget==null))
+        if (myPanInTime > 0)
+        {
+            myPanInTime -= Time.deltaTime;
+            thisCamera.orthographicSize = originalSize+(myPanInTime*panInZoom);
+            transform.position = new Vector3(transform.position.x, myYstart + myPanInTime*panInYoffset, transform.position.z);
+        }
+        else if (!(trackingTarget==null))
         {
             float xTarget = trackingTarget.position.x + xOffset;
             float yTarget = trackingTarget.position.y + yOffset;

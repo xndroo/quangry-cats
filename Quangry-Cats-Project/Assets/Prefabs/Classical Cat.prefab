@@ -133,7 +133,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 3
   m_LinearDrag: 3
-  m_AngularDrag: 0.15
+  m_AngularDrag: 0.4
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -169,6 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 50
+  angleSpeed: 70
   launchAngle: 30
   launchSpeed: 60
   gravity: -1500
@@ -179,7 +180,6 @@ MonoBehaviour:
   uncertaintyPositionScale: 5
   uncertaintyAngleScale: 30
   uncertaintyDelay: 0
-  angleSpeed: 40
   uncertaintyAngleLength: 4
   uncertaintyCircleWidth: 2
   uncertaintyRatioScrollSpeed: 1

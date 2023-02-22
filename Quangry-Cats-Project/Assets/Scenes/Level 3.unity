@@ -1618,7 +1618,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0ee3bdc9fac2f06448656e73bc9c5dc4, type: 3}
   - {fileID: 21300000, guid: d682754183d4a61cc980e927b7388ede, type: 3}
   ParentPanel: {fileID: 476729497}
-  cats: 0100000002000000010000000200000001000000
+  cats: 010000000200000001000000
 --- !u!4 &903575342
 Transform:
   m_ObjectHideFlags: 0

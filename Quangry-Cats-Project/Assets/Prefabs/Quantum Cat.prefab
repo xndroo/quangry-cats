@@ -169,6 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 250
+  angleSpeed: 70
   launchAngle: 30
   launchSpeed: 200
   gravity: -5000
@@ -179,7 +180,6 @@ MonoBehaviour:
   uncertaintyPositionScale: 5
   uncertaintyAngleScale: 27.1
   uncertaintyDelay: 0.75
-  angleSpeed: 40
   uncertaintyAngleLength: 4
   uncertaintyCircleWidth: 2
   uncertaintyRatioScrollSpeed: 0.1

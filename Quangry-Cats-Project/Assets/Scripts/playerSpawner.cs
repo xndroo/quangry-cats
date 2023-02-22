@@ -42,7 +42,7 @@ public class playerSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(mycat.GetComponent<PlayerMovement>().isProjectile && catrb.velocity.y < 0.5f && catrb.velocity.x < 1.0f)
+        if(mycat.GetComponent<PlayerMovement>().isProjectile && catrb.velocity.magnitude < 2.0f)
         {
             despawnTimer+= Time.deltaTime;
         }
@@ -59,7 +59,7 @@ public class playerSpawner : MonoBehaviour
 
         if (!mycat.GetComponent<PlayerMovement>().isProjectile && Input.GetKeyDown("4"))
         {
-            mycat.GetComponent<PlayerMovement>().launchSpeed = 200;
+            mycat.GetComponent<PlayerMovement>().launchSpeed += 10 * catrb.mass;
         }
 
     }

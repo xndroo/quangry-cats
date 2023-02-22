@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 10.0f;
+    public float angleSpeed = 1.5f;
     public float launchAngle = 45.0f;
     public float launchSpeed = 5.0f;
     public float gravity = -500.0f;
@@ -15,7 +16,6 @@ public class PlayerMovement : MonoBehaviour
     public float uncertaintyPositionScale = 5.0f;
     public float uncertaintyAngleScale = 30.0f;
     public float uncertaintyDelay = 1.0f;
-    public float angleSpeed = 1.0f;
     public float uncertaintyAngleLength = 4.0f;
     public float uncertaintyCircleWidth = 2.0f;
     public float uncertaintyRatioScrollSpeed = 1.0f;
@@ -69,17 +69,24 @@ public class PlayerMovement : MonoBehaviour
         // Get the horizontal and vertical axis.
         // By default they are mapped to the arrow keys.
         // The value is in the range -1 to 1
-        float vertical_translation = Input.GetAxis("Vertical") * speed;
-        float horizontal_translation = Input.GetAxis("Horizontal") * speed;
+        float vertical_translation = Input.GetAxis("Vertical");
+        float horizontal_translation = Input.GetAxis("Horizontal");
 
         // Make it move 10 meters per second instead of 10 meters per frame...
         vertical_translation *= Time.deltaTime;
         horizontal_translation *= Time.deltaTime;
 
-        // Move translation
+        // Move translation and rotation
         if (!isProjectile)
         {
-            rb.AddForce(new Vector2(0, vertical_translation), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(0, vertical_translation*speed), ForceMode2D.Impulse);
+            launchAngle -= angleSpeed*horizontal_translation;
+        }
+        // Add speed hacks
+        if (!isProjectile && Input.GetKeyDown("4"))
+        {
+            launchSpeed += 10 * rb.mass;
+            myPointer.transform.localScale += new Vector3(0.4f,0.0f,0.0f);
         }
 
         // Update and control uncertainties
@@ -135,15 +142,7 @@ public class PlayerMovement : MonoBehaviour
             Destroy(myPointer);
         }
 
-        // Change launch angle
-        if (Input.GetKey("a"))
-        {
-            launchAngle += angleSpeed*Time.deltaTime;
-        }
-        else if (Input.GetKey("d"))
-        {
-            launchAngle -= angleSpeed*Time.deltaTime;
-        }
+
 
         //Add gravity if in air
         if (isProjectile)

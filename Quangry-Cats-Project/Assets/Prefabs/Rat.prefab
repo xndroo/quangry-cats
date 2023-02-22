@@ -116,7 +116,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0.5
+  m_LinearDrag: 0.1
   m_AngularDrag: 0.15
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageThreshold: 3
-  maxHealth: 20
+  maxHealth: 25
   numberDamageLevels: 3
   spriteRenderer: {fileID: 4948822336490697157}
   Sprites:
