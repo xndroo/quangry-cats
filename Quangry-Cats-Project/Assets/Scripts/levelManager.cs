@@ -114,8 +114,7 @@ public class levelManager : MonoBehaviour
     {
         string currentSceneName = SceneManager.GetActiveScene().name; 
         int levelNumber = int.Parse(currentSceneName.Substring(6));
-        Debug.Log(levelNumber);
-        // SceneLoader.Load("Level " + levelNumber.toString());
+        SceneLoader.Load("Level " + (levelNumber+1).ToString());
     }
 
 }
