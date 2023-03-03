@@ -50,7 +50,7 @@ MonoBehaviour:
   PopupBG: {fileID: 5670147100953372107, guid: bbf8766613ee2db4c8dac88af36f60cb, type: 3}
   popupResetButton: {fileID: 6410937400352307053, guid: bc37dee8d1cd2144e9a5ae11b987b0c7, type: 3}
   popupMenuButton: {fileID: 6828074172402830761, guid: 0047cebbe6c15384581b069ff1fb088b, type: 3}
-  popupNextButton: {fileID: 8622508515250480689, guid: 38d391cfcc6431e449ad2971f349d32d, type: 3}
+  popupNextButton: {fileID: 5010894640114055465, guid: 38d391cfcc6431e449ad2971f349d32d, type: 3}
   popupWin: {fileID: 280661228059977572, guid: 578dbbde7853fe5dfbe9c802ed8d03f2, type: 3}
   popupLose: {fileID: 4577724101824760859, guid: 6ea05b4ed5b2ad544b1e9c2f129b3604, type: 3}
   levelOngoing: 1

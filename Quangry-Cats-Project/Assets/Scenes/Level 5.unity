@@ -2767,7 +2767,7 @@ PrefabInstance:
     - target: {fileID: 8659200582511599476, guid: 3458548d7ccd42543923421e103a2935, type: 3}
       propertyPath: popupNextButton
       value: 
-      objectReference: {fileID: 8622508515250480689, guid: 38d391cfcc6431e449ad2971f349d32d, type: 3}
+      objectReference: {fileID: 5010894640114055465, guid: 38d391cfcc6431e449ad2971f349d32d, type: 3}
     - target: {fileID: 8937448533905311654, guid: 3458548d7ccd42543923421e103a2935, type: 3}
       propertyPath: m_RootOrder
       value: 1
