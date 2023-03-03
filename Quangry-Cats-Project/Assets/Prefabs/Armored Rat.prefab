@@ -142,8 +142,8 @@ MonoBehaviour:
   spriteRenderer: {fileID: 4948822336490697157}
   Sprites:
   - {fileID: 21300000, guid: 7d09ef40bce72ddaaad35da84626b6a5, type: 3}
-  - {fileID: 21300000, guid: 0ab34a1db6ade0743aeddca1044d9303, type: 3}
-  - {fileID: 21300000, guid: ddeabb1cdaa01704494bf0b575c7b349, type: 3}
+  - {fileID: 21300000, guid: 95552dcaae9ea7abe885723a9b500eeb, type: 3}
+  - {fileID: 21300000, guid: db0168cf9d8f562248223c4a8c846ed0, type: 3}
   deathPoints: 2000
   deathEffects: {fileID: 2882132012883217342, guid: e5065c1030c3b8f498af6b4af09c707f, type: 3}
   health: 0
